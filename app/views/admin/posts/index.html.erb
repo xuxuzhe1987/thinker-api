@@ -1,0 +1,18 @@
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+        <div class="delete-button">
+            <%= button_to "Delete",
+                        admin_post_path(post),
+                        method: :delete %>
+        </div>
+        <div class="card">
+            <%= post.created_at %>,
+            <%= post.id %>,
+            <%= post.body %>,
+            <%= post.nickname %>,
+            <%= post.open_id %>
+        </div>
+    </li>
+  <% end %>
+</ul>
