@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+posts = [
+  { name:'Mo', body: 'Hello World' },
+  { name:'Fabien', body: 'Hello Python' },
+  { name:'Brian', body: 'Hello JS' },
+  { name:'Forrest', body: 'Hello Rails' }
+]
+Post.create(posts)
