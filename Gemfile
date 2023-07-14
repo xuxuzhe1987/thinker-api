@@ -51,6 +51,7 @@ gem "bootsnap", require: false
 gem 'rest-client'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'jwt'
+gem 'dotenv', require: 'dotenv/load'
 
 
 
