@@ -1,7 +1,8 @@
 # app/controllers/api/v1/base_controller.rb
 class Api::V1::BaseController < ActionController::Base
 
-  HMAC_SECRET = Rails.application.credentials.dig(:jwt, :hmac_secret) # find the secret
+  # HMAC_SECRET = Rails.application.credentials.dig(:jwt, :hmac_secret) # find the secret
+  HMAC_SECRET = ENV['HMAC_SECRET']
 
   skip_before_action :verify_authenticity_token
   before_action :verify_request
