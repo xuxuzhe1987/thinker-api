@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    validates :body, presence: true, length: { minimum: 2, maximum: 40 }
+    validates :body, presence: true, length: { minimum: 1, maximum: 50 }
     validates :nickname, presence: true
     validates :avatarUrl, presence: true
     validates :open_id, presence: true
