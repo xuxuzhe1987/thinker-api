@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: thinker_api_production
-  username: thinker_api
+  username: ecs-user
   password: <%= ENV["THINKER_API_DATABASE_PASSWORD"] %>
