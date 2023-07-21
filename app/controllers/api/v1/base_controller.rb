@@ -14,8 +14,7 @@ class Api::V1::BaseController < ActionController::Base
   def access_token
     token_params = {
       appid: ENV['WECHAT_APPID'],
-      secret: ENV['WECHAT_APPSECRET'],
-      grant_type: "client_credential"
+      secret: ENV['WECHAT_APPSECRET']
     }
     wechat_response = RestClient.get("https://api.weixin.qq.com/cgi-bin/token", params: token_params)
     return JSON.parse(wechat_response.body)["access_token"]
