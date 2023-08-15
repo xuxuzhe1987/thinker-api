@@ -4,7 +4,9 @@ class Api::V1::PostsController < Api::V1::BaseController
   before_action :set_post, only: [ :show, :destroy ]
 
   def index
-    @posts = Post.order(created_at: :desc).all
+    # @posts = Post.order(created_at: :desc).all
+    @posts = Post.where(open_id: @current_user.open_id).order(created_at: :desc).all
+    
     @my_posts = Post.where(open_id: @current_user.open_id).order(created_at: :desc).all
     @my_likes = Like.where(user_id: @current_user.id).pluck(:post_id)
   end
