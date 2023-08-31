@@ -1,14 +1,28 @@
 <ul>
+  <%= "user list：" %>
+  <% @users.each do |user| %>
+    <li>
+        <div class="card">
+            <%= user.id %>,
+            <%= user.created_at.in_time_zone("Beijing").strftime('%Y-%m-%d %H:%M:%S %Z') %>,
+            <%= user.open_id %>
+        </div>
+    </li>
+  <% end %>
+  <br>
+  <br>
+  <br>
   <%= "post list:" %>
   <% @posts.each do |post| %>
     <li>
         <div class="delete-button">
             <%= button_to "Delete",
                         admin_post_path(post),
-                        method: :delete %>
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
         </div>
         <div class="card">
-            <%= post.created_at %>,
+            <%= post.created_at.in_time_zone("Beijing").strftime('%Y-%m-%d %H:%M:%S %Z') %>,
             <%= post.id %>,
             <%= post.body %>,
             <%= post.nickname %>,
